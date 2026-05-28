@@ -17,41 +17,44 @@ The main goals are:
 - Document the environment in a way that can be reviewed, reused and improved.
 
 ## Architecture Summary
+
 The lab follows a layered security model:
 
-Remote Users/ External Access
--> Palo Alto Edge Firewall HA
--> DMZ / Transit Networks
--> FTD Internal Firewall HA
--> Internal Enterprise Zones
+Remote Users / External Access  
+→ Palo Alto Edge Firewall HA  
+→ DMZ / Transit Networks  
+→ Cisco Secure Firewall / FTD Internal Firewall HA  
+→ Internal Enterprise Zones
 
-Internal zones are segmented by function and protected through firewall policy. Access between zones is explicitly allowed based on role, service dependency and operational need.
+Internal zones are segmented by function and protected through firewall policy. Access between zones is explicitly allowed based on role, service dependency, and operational need.
 
 Remote Users / External Access
              |
              v
-     Global Protect VPN
+     GlobalProtect VPN
              |
              v
-+--------------------------+
-|Palo Alto Edge Firewall HA|
-+--------------------------+
-       |              |
-       |              v
-       |           DMZ Zone
++-----------------------------+
+| Palo Alto Edge Firewall HA  |
++-----------------------------+
+       |                 |
+       |                 v
+       |              DMZ Zone
        |
        v
- Transit Networks
+  Transit Networks
        |
        v
-+------------------------------+
-|Cisco FTD Internal Firewall HA|
-+------------------------------+
-   |
-   +-----------+--------+---------+----------+
-   |           |        |         |          |
-   v           v        v         v          v
-Infra-Core  Servers  DevOps  Kubernetes  Monitoring
++-----------------------------+
+| Cisco Secure Firewall HA    |
+| Internal Segmentation       |
++-----------------------------+
+       |
+       +----------+----------+----------+----------+
+       |          |          |          |          |
+       v          v          v          v          v
+  Infra-Core   Servers     DevOps   Kubernetes  Monitoring
+ AD/DNS/NPS    Apps/DB     CI/CD    Workloads   Logs/Metrics        
 
 ## Technology Stack
 | Area | Technologies |
