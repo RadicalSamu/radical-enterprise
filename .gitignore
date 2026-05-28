@@ -1,0 +1,86 @@
+# Secrets and environment files
+.env
+.env.*
+!.env.example
+secrets/
+private/
+credentials/
+credentials*
+passwords*
+*.secret
+
+# Keys and certificates
+*.key
+*.pem
+*.pfx
+*.p12
+*.jks
+*.keystore
+*.crt
+*.csr
+
+# Tokens and license keys
+*tokens*
+*token*
+*.lic
+license-key*
+license_keys*
+
+# Logs and runtime output
+*.log
+logs/
+output/
+tmp/
+temp/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+venv/
+env/
+pip-wheel-metadata/
+.pytest_cache/
+
+# Ansible
+*.retry
+.vault_pass
+vault-password*
+group_vars/*/vault.yml
+host_vars/*/vault.yml
+
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+terraform.tfvars
+terraform.tfvars.json
+crash.log
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# IDE/editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Archives/backups
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.7z
+*.rar
+*.bak
+*.backup
+*.old
