@@ -20,14 +20,7 @@ The main goals are:
 
 The lab follows a layered security model:
 
-Remote Users / External Access  
-→ Palo Alto Edge Firewall HA  
-→ DMZ / Transit Networks  
-→ Cisco Secure Firewall / FTD Internal Firewall HA  
-→ Internal Enterprise Zones
-
-Internal zones are segmented by function and protected through firewall policy. Access between zones is explicitly allowed based on role, service dependency, and operational need.
-
+```text
 Remote Users / External Access
              |
              v
@@ -55,6 +48,9 @@ Remote Users / External Access
        v          v          v          v          v
   Infra-Core   Servers     DevOps   Kubernetes  Monitoring
  AD/DNS/NPS    Apps/DB     CI/CD    Workloads   Logs/Metrics        
+```
+
+Internal zones are segmented by function and protected through firewall policy. Access between zones is explicitly allowed based on role, service dependency, and operational need.
 
 ## Technology Stack
 | Area | Technologies |
