@@ -1,0 +1,44 @@
+Device,Hostname,Interface,IP Address,CIDR,VLAN,Gateway,Type,Notes
+PA HA Pair,PA-VM AND PA-VM2,ethernet1/1,198.18.1.2,/32,N/A,198.18.1.1,NAT Outside Global(PAT),Public IP all the internal hosts NAT to for internet egress(Simulates the public IP for lab purposes)
+PaloAlto Firewall 1,PA-VM,Management,192.168.10.2,/28,N/A,N/A,MGMT (Out Of Band),"This is for the GUI Access, accessed through 192.168.10.1 fw-admin workstation"
+PaloAlto Firewall 2,PA-VM2,Management,192.168.10.3,/28,N/A,N/A,MGMT (Out Of Band),"This is for the GUI Access, accessed through 192.168.10.1 fw-admin workstation"
+FTD Primary,FTD,Management0/0,192.168.10.18,/28,N/A,N/A,MGMT (Out of Band),"This is for the GUI access, accessed through 192.168.10.17 fw-admin workstation"
+FTD Secondary,FTD,Management0/0,192.168.10.19,/28,N/A,N/A,MGMT (Out Of Band),"This is for the GUI access, accessed through 192.168.10.17 fw-admin workstation"
+PaloAlto Firewall 1,PA-VM,ethernet1/2,172.16.0.9,/30,N/A,N/A,HA Control Link (Heartbeat),Heartbeat/Failover to PA-VM2
+PaloAlto Firewall 2,PA-VM2,ethernet1/2,172.16.0.10,/30,N/A,N/A,HA Control Link (Heartbeat),Heartbeat/Failover to PA-VM
+PA HA Pair,PA-VM and PA-VM2,ethernet1/3,N/A,N/A,N/A,N/A,HA Data Link(Sync),Session/State synchronization between the firewall pair
+FTD Pair,Primary,GigabitEthernet0/2,172.16.0.13,/28,N/A,N/A,Failover Link,Hearbeat and Config Sync
+FTD Pair,Secondary,GigabitEthernet0/2,172.16.0.14,/28,N/A,N/A,Failover Link,Hearbeat and Config Sync
+FTD Pair,Primary,GigabitEthernet0/3,172.16.0.17,/28,N/A,N/A,Stateful Failover Link,Connection State Sync
+FTD Pair,Secondary,GigabitEthernet0/3,172.16.0.18,/28,N/A,N/A,Stateful Failover Link,Connection State Sync
+PA HA Pair,PA-VM and PA-VM2,ethernet1/4,172.16.0.1,/30,N/A,N/A,Transit,This is the transit link to the internal FTD HA Pair g0/0
+PA HA Pair,PA-VM and PA-VM2,ethernet1/7,172.16.0.5,/30,N/A,N/A,Transit,This is the backup transit link to the internal FTD HA Pair g0/1
+FTD HA Pair,FTD,GigabitEthernet0/0,172.16.0.2,/30,N/A,N/A,Transit,This is the backup transit link to the internal PA pair e1/4
+FTD HA Pair,FTD,GigabitEthernet0/1,172.16.0.6,/30,N/A,N/A,Transit,This is the backup transit link to the internal PA pair e1/7
+PA HA Pair,PA-VM and PA-VM2,tunnel.1,10.10.70.0,/24,N/A,N/A,RA VPN Pool,This is the IP Pool for the Remote access VPN clients into the internal jumphost
+PA HA Pair,PA-VM and PA-VM2,ethernet1/5,10.10.60.1,/24,N/A,NA,Gateway for the DMZ segment,This is the gateway for the DMZ
+Public Web Server,pweb,ens192,10.10.60.10,/24,N/A,10.10.60.1,Server,This is the public facing webserver
+Mail Relay Server,mailr,ens160,10.10.60.20,/24,N/A,10.10.60.1,Server,This is the mail relay server
+FTD HA Pair,FTD,GigabitEthernet0/4.10,10.10.10.1,/24,10,N/A,Gateway for the CoreServices Zone,This is the gateway for the CoreServices Vlan
+Inside jumphost,jumphost,Ethernet0,10.10.10.11,/24,10,10.10.10.1,Jumphost,This is the jumphost used to access the internal devices
+NPS Server,NPSserv,Ethernet0,10.10.10.20,/24,10.10.10.1,Server,This is the radius server
+CA Server,CAserv,Ethernet0,10.10.10.30,/24,10.10.10.1,Server,This is the Certificate Authority server
+File Server,Fileserv,Ethernet0,10.10.10.40,/24,10.10.10.1,Server,This is the file server
+Domain Controller,DCserv,Ethernet0,10.10.10.10,/24,10.10.10.1,Server,"This is currently the domain controller handles DNS, AD DS, and the PDC Emulator acts as the time authority"
+FTD HA Pair,FTD,GigabitEthernet0/4.20,10.10.20.1,/24,20,N/A,Gateway for the DevOps Zone,This is the gateway for the DevOps Vlan
+Docker Server,dck-serv,ens160,10.10.20.60,/24,20,10.10.20.1,Server,This is the Docker Server
+Ansible Server,ans-serv,ens160,10.10.20.30,/24,20,10.10.20.1,Server,This is the Ansible Server
+Jenkins Server,jnk-serv,ens160,10.10.20.20,/24,20,10.10.20.1,Server,This is the Jenkins Server
+Git Server,git-serv,ens160,10.10.20.10,/24,20,10.10.10.20.1,Server,This is the GIT server
+DevOps Database,devops-db-serv,ens160,10.10.20.50,/24,20,10.10.20.1,Database,This is the DevOps Database server
+SonarQube Server,sonar-serv,10.10.20.40,/24,20,10.10.20.1,Server,This is the SonarQube Server
+FTD HA Pair,FTD,GigabitEthernet0/4.30,10.10.30.1,/24,30,N/A,Gateway for the K8s Zone,This is the gateway for the Kubernetes Vlan
+Kubernetes Server,k8s-serv,ens160,10.10.30.10,/24,30,10.10.30.1,Server,This is the kubernetes Server
+FTD HA Pair,FTD,GigabitEthernet0/4.40,10.10.40.1,/24,40,N/A,Gateway for the Servers Zone,This is the gateway for the Internal Servers Vlan
+Servers Zone Database,db-serv,ens192,10.10.40.10,/24,40,10.10.40.1,Database,This is the database for the internal servers zone
+Internal Web Server,web-serv,ens192,10.10.40.20,/24,40,10.10.40.1,Server,This is the internal web server
+Mail Server,mail-serv,ens192,10.10.40.30,/24,40,10.10.40.1,Server,This is the mail server
+FTD HA Pair,FTD,GigabitEthernet0/4.50,10.10.50.1,/24,50,N/A,Gateway for the Monitoring Zone,This is the gateway for the Monitoring Vlan
+Splunk Server,splk-serv,ens160,10.10.50.10,/24,50,10.10.50.1,Server,This is the Splunk Server
+Prometheus Server,prm-serv,ens160,10.10.50.30,/24,50,10.10.50.1,Server,This is the Prometheus Server
+Grafana Server,grf-serv,ens160,10.10.50.20,/24,50,10.10.50.1,Server,This is the Grafana Server
