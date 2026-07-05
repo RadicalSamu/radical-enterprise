@@ -24,7 +24,7 @@ Inside jumphost,jumphost,Ethernet0,10.10.10.11,/24,10,10.10.10.1,Jumphost,This i
 NPS Server,NPSserv,Ethernet0,10.10.10.20,/24,10,10.10.10.1,Server,This is the radius server
 CA Server,CAserv,Ethernet0,10.10.10.30,/24,10,10.10.10.1,Server,This is the Certificate Authority server
 File Server,Fileserv,Ethernet0,10.10.10.40,/24,10,10.10.10.1,Server,This is the file server
-Domain Controller,DCserv,Ethernet0,10.10.10.10,/24,10.10.10.1,Server,"This is currently the domain controller handles DNS, AD DS, and the PDC Emulator acts as the time authority"
+Domain Controller,DCserv,Ethernet0,10.10.10.10,/24,10,10.10.10.1,Server,"This is currently the domain controller handles DNS, AD DS, and the PDC Emulator acts as the time authority"
 FTD HA Pair,FTD,GigabitEthernet0/4.20,10.10.20.1,/24,20,N/A,Gateway for the DevOps Zone,This is the gateway for the DevOps Vlan
 Docker Server,dck-serv,ens160,10.10.20.60,/24,20,10.10.20.1,Server,This is the Docker Server
 Ansible Server,ans-serv,ens160,10.10.20.30,/24,20,10.10.20.1,Server,This is the Ansible Server
