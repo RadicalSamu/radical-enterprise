@@ -1,6 +1,6 @@
 # Configs
 
-This folder contains the full, final raw configuration files for my lab devices (firewalls, switches, and other network gear). These are posted as-is, so anyone wanting to skim the end result can do so without digging through a guide.
+This folder contains the full raw configuration files for the lab devices. These are posted as-is, so anyone wanting to skim the current config  can do so without digging through a guide.
 
 Filenames indicate the device they belong to.
 
