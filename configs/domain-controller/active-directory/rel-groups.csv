@@ -1,0 +1,2 @@
+"Name","GroupScope","GroupCategory","DistinguishedName"
+"linux-admins","Global","Security","CN=linux-admins,OU=Groups,OU=REL,DC=radicaldc,DC=lab"

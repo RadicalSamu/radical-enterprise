@@ -1,0 +1,15 @@
+ Get-DnsServerZone
+
+ZoneName                            ZoneType        IsAutoCreated   IsDsIntegrated  IsReverseLookupZone  IsSigned
+--------                            --------        -------------   --------------  -------------------  --------
+_msdcs.radicaldc.lab                Primary         False           True            False                False
+0.in-addr.arpa                      Primary         True            False           True                 False
+10.18.198.in-addr.arpa              Primary         False           True            True                 False
+127.in-addr.arpa                    Primary         True            False           True                 False
+255.in-addr.arpa                    Primary         True            False           True                 False
+6.18.198.in-addr.arpa               Primary         False           True            True                 False
+7.18.198.in-addr.arpa               Primary         False           True            True                 False
+8.18.198.in-addr.arpa               Primary         False           True            True                 False
+9.18.198.in-addr.arpa               Primary         False           True            True                 False
+radicaldc.lab                       Primary         False           True            False                False
+TrustAnchors                        Primary         False           False           False                False
