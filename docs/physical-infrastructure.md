@@ -2,7 +2,7 @@
 
 ## Design Philosophy
 
-The hardware specifications below reflect what's currently used for the full Radical Enterprise lab. The ['labs'](`../labs/)` section of the repo is meant to break this down into smaller, standalone versions, so it's possible to follow along with the same technologies and configurations, but scaled to bare-minimum requirements — each smaller lab is effectively a puzzle piece of how to implement the same setup without needing hardware anywhere close to what's listed here.
+The hardware specifications below reflect what's currently used for the full Radical Enterprise lab. The ['labs'](../labs/) section of the repo is meant to break this down into smaller, standalone versions, so it's possible to follow along with the same technologies and configurations, but scaled to bare-minimum requirements — each smaller lab is effectively a puzzle piece of how to implement the same setup without needing hardware anywhere close to what's listed here.
 
 These specifications are also expected to shrink over time. As telemetry accumulates on actual resource usage, the plan is to right-size each component — giving it only what it needs to run optimally, once real usage patterns make that apparent, rather than over-provisioning up front.
 
