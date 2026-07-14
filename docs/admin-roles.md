@@ -76,22 +76,21 @@ He doesn't trust a system until he's seen it fail and recover on his own terms. 
 ---
 
 ## J.A.R.V.I.S.
-
+ 
 **OU:** `Users/service-accounts`
-**Role:** Mail infrastructure
-**Access scope:** Mail server (Servers zone), mail relay (DMZ)
-
+**Role:** Service account identity — the umbrella under which every non-interactive, machine-to-machine account in Radical Enterprise operates
+**Access scope:** Varies per account, always narrowly scoped to a single service or integration — mail infrastructure, directory-integration binds for the perimeter firewalls, and any future automated/background service that needs an identity but not a person behind it
+ 
 ### Lore
-
-No one in Radical Enterprise has a face to put to J.A.R.V.I.S. There's no desk, no seat in standups, no name that comes up when something goes wrong elsewhere in the org. What people know is smaller and stranger: mail moves, and it moves correctly, and whenever anyone traces back far enough to ask who's responsible for that, the answer stops being a person and starts being a name attached to a service.
-
-The only confirmed contact is the Major's. Whatever conversation happens there, it doesn't reach anyone else — no meetings, no standups, nothing passed down the chain in the way every other zone's work gets passed down. Mr. Robot sees the same thing everyone else does: quiet telemetry arriving from the mail server, on schedule, same as every other zone reporting into Monitoring. That's the only trace J.A.R.V.I.S. leaves in anyone else's view — a well-behaved log source, nothing more, nothing less. Whether that consistency comes from a person who prefers to stay invisible or something closer to infrastructure that simply answers to one voice, nobody in the company has ever had reason — or opportunity — to find out.
+ 
+No one in Radical Enterprise has a face to put to J.A.R.V.I.S. There's no desk, no seat in standups, no name that comes up when something goes wrong elsewhere in the org. What people notice instead is smaller and stranger: things simply work. Mail moves. The firewalls check in against the directory when they need to. Whatever else quietly needs an identity to function gets one, narrowly scoped, asking for nothing more than what the job requires — and whenever anyone traces far enough back to ask who's responsible, the answer stops being a person and starts being a name attached to a service.
+ 
+The only confirmed contact is the Major's. Whatever conversation happens there, it doesn't reach anyone else — no meetings, no standups, nothing passed down the chain the way every other zone's work gets passed down. What the rest of the org sees is just the output: a mail server that logs in on schedule same as everyone else, a Palo Alto that authenticates cleanly against the directory, one more small thing running correctly that nobody had to think about twice. Whether that consistency comes from a person who prefers to stay invisible or something closer to infrastructure that simply answers to one voice, nobody in the company has ever had reason — or opportunity — to find out. They just know that whatever wears the name is never the thing that breaks.
 
 ### Notes
-- Access scoped to the mail server and mail relay only
-- Mail server logs to Monitoring zone like every other zone (see `network-architecture.md`) — this is the only externally visible trace of its activity
-- No other visibility or interaction with other admins' zones
-- Relationship with the Major implied but undocumented
+- `jarvis-` is the naming convention for every service account in the domain, not a single account — each individual service account is scoped to exactly one integration
+- Naming pattern: `jarvis-<service>-<purpose>` — e.g. `jarvis-paloalto-adauth` (Palo Alto directory-integration bind account), with more added as new services need one (mail, FTD, Splunk, NPS, etc.)
+- Each `jarvis-*` account is non-interactive — no logon rights beyond what its specific integration requires
 
 ---
 
