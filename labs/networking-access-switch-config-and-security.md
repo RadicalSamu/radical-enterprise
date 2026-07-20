@@ -8,12 +8,19 @@ Anyone comfortable with basic Cisco IOS CLI navigation who wants a practical, op
 
 > Derived from the main lab configuration in REL.
 
-## Lab topology (assumed)
+## Lab topology
 
-- One access switch (`access-sw`) with:
-  - Two trunk uplinks (`Et0/0`, `Et0/1`) toward a firewall/router-on-a-stick
-  - Several access ports, each dedicated to a VLAN/zone (e.g., core, devops, k8s, servers, monitoring)
-  - A handful of unused physical ports
+You only need **Cisco Modeling Labs (CML) — Free/Personal tier** to complete this lab. No physical hardware required, and a single IOSv/IOSvL2 switch node is all you need — the trunk, access, and security config here can all be built and verified on that one node.
+
+**Minimum hardware to run CML (per Cisco's official system requirements):**
+
+| Resource | Minimum |
+|---|---|
+| Memory | 8 GB (allocated to the CML VM) |
+| CPU | 4+ physical cores, Intel processor supporting VT-x and EPT |
+| Network | 1 interface |
+| Disk | 32 GB or more |
+
 - No DHCP server on these VLANs (this matters later — see the DAI note)
 
 Swap VLAN numbers, interface names, and IPs for your own topology as you go.
