@@ -2,7 +2,7 @@
 
 ## Lab Overview
 
-This lab builds on the [Initial Palo Alto Config](01-palo-alto-initial-config/) lab and configures the core Layer 3 networking on the firewall: interfaces, zones, address objects, a virtual router, OSPF, and NAT for internet access.
+This lab builds on the [Initial Palo Alto Config](../01-palo-alto-initial-config/) lab and configures the core Layer 3 networking on the firewall: interfaces, zones, address objects, a virtual router, OSPF, and NAT for internet access.
 
 The objects and IP scheme used here (transit subnets, DMZ subnet, etc.) map directly to the broader REL topology — see the [related docs](../../docs/) for the full picture. This lab can be followed as a standalone exercise with your own addressing scheme; the specific object names and IPs below exist to fit the larger REL topology, not because they're the only valid values.
 
@@ -49,8 +49,6 @@ If you'd rather create everything up front, here's the full list. I built these 
 | `dmz-zone` | |
 | `Inside` | |
 | `Outside` | created in the interface setup step above |
-
-> Naming note: `Inside` and `Outside` are capitalized/unhyphenated on purpose — the FTD downstream treats those two zones specifically differently, so keeping them visually distinct from `dmz-zone` (which isn't treated any differently) is intentional, not an inconsistency.
 
 **Interface Management Profile** (`Network > Network Profiles > Interface Mgmt`)
 
