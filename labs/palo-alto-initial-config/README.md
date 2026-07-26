@@ -2,7 +2,7 @@
 
 This lab covers the initial setup of a Palo Alto firewall (PA-VM), including base networking, admin hardening, syslog forwarding, and a configuration backup.
 
-> Refer back to the docs folder [docs](../../docs/) fp the network diagram and network architecture `.md` as needed or for IP/interface context.
+> Refer back to the docs folder [docs](../../docs/) for the network diagram and network architecture `.md` as needed or for IP/interface context.
 
 ---
 
