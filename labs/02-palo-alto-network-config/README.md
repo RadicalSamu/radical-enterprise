@@ -2,7 +2,7 @@
 
 ## Lab Overview
 
-This lab builds on the [Initial Palo Alto Config](palo-alto-initial-config/) lab and configures the core Layer 3 networking on the firewall: interfaces, zones, address objects, a virtual router, OSPF, and NAT for internet access.
+This lab builds on the [Initial Palo Alto Config](01-palo-alto-initial-config/) lab and configures the core Layer 3 networking on the firewall: interfaces, zones, address objects, a virtual router, OSPF, and NAT for internet access.
 
 The objects and IP scheme used here (transit subnets, DMZ subnet, etc.) map directly to the broader REL topology — see the [related docs](../../docs/) for the full picture. This lab can be followed as a standalone exercise with your own addressing scheme; the specific object names and IPs below exist to fit the larger REL topology, not because they're the only valid values.
 
@@ -10,7 +10,7 @@ The objects and IP scheme used here (transit subnets, DMZ subnet, etc.) map dire
 
 ## 1. Interfaces & Zones
 
-Now that the [initial config lab](palo-alto-initial-config/) is done, you can rename the interfaces if you'd like — I personally leave them as their physical interface names (e.g. `ethernet1/1`).
+You can rename the interfaces if you'd like — I personally leave them as their physical interface names (e.g. `ethernet1/1`).
 
 Go to **Network > Interfaces**, select the interface, and name it appropriately.
 
@@ -135,7 +135,7 @@ Go to **Redistribution Profile > Add**, name the profile, set the action to **Re
 
 ![Creating the redistribution profile for the static default route](screenshots/palo-alto-redistpf.png)
 
-Then go to **OSPF > Export Rules > Add**. I named it `default-redist`, set the type to **Ext-1** (External Type 1) so this path is always preferred over Type 2 routes — Type 2 is the usual default — and set the metric to `10`.
+Then go to **OSPF > Export Rules > Add**. Select the redistribution profile. I named it `default-redist`, set the type to **Ext-1** (External Type 1) so this path is always preferred over Type 2 routes — Type 2 is the usual default — and set the metric to `10`.
 
 ![Creating the OSPF export rule for the redistribution profile](screenshots/palo-alto-exportrule.png)
 
