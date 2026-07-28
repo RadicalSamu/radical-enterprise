@@ -68,7 +68,7 @@ Go to **Device > System Settings > DNS Server**. The mgmt interface is already u
 
 Go to **Device > Routing > OSPF**.
 
-This topology only needs a single router, so we're using the default. (On a future lab unrelated to REL, multiple router instances might come into play, but not here.)
+This topology only needs a single virtual router, so we're using the default one. You could create additional virtual routers — for example, to maintain separate, fully independent routing tables — but that's not needed for this lab.
 
 ![alt text](screenshots/33-devicerouting.png)
 
