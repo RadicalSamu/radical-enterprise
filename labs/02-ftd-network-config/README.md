@@ -56,7 +56,7 @@ Add the interfaces to the zones. Note that on the inside zone I did **not** add 
 
 ## DNS for Data Interfaces
 
-Check **Objects > DNS Groups**. Here you can see the Umbrella DNS servers, along with the custom group — which is what was set on the CLI earlier.
+Check **Objects > DNS Groups**. Here you can see the Umbrella DNS servers, along with the custom group — which is what was set on the CLI earlier on the lab 01 ftd.
 
 ![alt text](screenshots/10-dns-servergroup.png)
 
