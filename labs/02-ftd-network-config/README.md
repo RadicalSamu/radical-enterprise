@@ -4,7 +4,7 @@ This lab covers interfaces, security zones, DNS for data interfaces, and OSPF ro
 
 ## Interfaces and Zones
 
-I started my FTD with only 3 usable interfaces:
+I started my FTD with only 3 usable interfaces and I needed 8:
 
 ![alt text](screenshots/23-badinterfaces.png)
 
